@@ -1,6 +1,6 @@
 <div>
 
-    <div class="relative w-full min-h-[150vh] md:min-h-screen">
+    <div class="relative w-full min-h-[180vh] md:min-h-screen">
         <img src="{{ asset('images/backgrounds/background.jpg') }}" class="absolute inset-0 w-full h-full object-cover">
 
         <div

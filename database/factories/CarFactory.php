@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\CarMake;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CarFactory extends Factory
@@ -9,7 +10,7 @@ class CarFactory extends Factory
     public function definition()
     {
         return [
-            'make' => $this->faker->randomElement(['Audi', 'BMW', 'Mercedes']),
+            'make_id' => CarMake::inRandomOrder()->first()->id,
             'model' => $this->faker->randomElement(['A6', 'X5', 'C-Class']),
             'category' => $this->faker->randomElement(['Седан', 'SUV', 'Хечбек']),
             'year' => $this->faker->year(),

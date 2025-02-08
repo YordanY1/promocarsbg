@@ -30,7 +30,7 @@
 
 
                         <div class="p-4 text-center">
-                            <h3 class="text-lg font-bold text-gray-800">{{ $car->make }} {{ $car->model }}</h3>
+                          <h3 class="text-lg font-bold text-gray-800">{{ $car->brand->name }} {{ $car->model }}</h3>
                             <p class="text-lg text-orange-500 font-semibold mb-4">{{ number_format($car->price, 2) }}
                                 лв.</p>
                             <a wire:navigate href="/cars/{{ $car->id }}"
@@ -57,7 +57,7 @@
 
 
                         <div class="p-4 text-center">
-                            <h3 class="text-lg font-bold text-gray-800">{{ $car->make }} {{ $car->model }}</h3>
+                           <h3 class="text-lg font-bold text-gray-800">{{ $car->brand->name }} {{ $car->model }}</h3>
                             <p class="text-lg text-orange-500 font-semibold mb-4">{{ number_format($car->price, 2) }}
                                 лв.</p>
                             <a wire:navigate href="/cars/{{ $car->id }}"
@@ -92,7 +92,7 @@
     </div>
 
     <div class="mt-12 flex justify-center">
-        <a wire:navigate href="/catalog"
+        <a wire:navigate href="/cars"
             class="bg-orange-500 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-orange-600 transition transform hover:scale-105">
             Виж всички автомобили
         </a>

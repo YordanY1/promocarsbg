@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="bg">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
+
 <body class="flex flex-col min-h-screen antialiased bg-bgColor">
 
     <x-header />
@@ -15,7 +17,9 @@
         {{ $slot }}
     </main>
 
+    @livewire('components.footer')
 
     @livewireScripts
 </body>
+
 </html>

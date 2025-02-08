@@ -18,4 +18,9 @@ class Car extends Model {
         return $this->hasMany( CarImage::class );
     }
 
+    public function brand() {
+        return $this->belongsTo( CarMake::class, 'make_id', 'id' );
+
+    }
+
 }

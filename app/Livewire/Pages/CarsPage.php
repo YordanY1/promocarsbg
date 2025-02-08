@@ -6,61 +6,41 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Car;
 
-class CarsPage extends Component
-{
+class CarsPage extends Component {
     use WithPagination;
 
-    public $search = '';
-    public $brand = '';
-    public $minPrice, $maxPrice;
-    public $fuelType = '';
-    public $sortBy = 'latest';
+    public $minPrice = 0;
+    public $maxPrice = 300000;
+    public $selectedBrand = null;
 
-    public function updatingSearch()
-    {
+    protected $queryString = [
+        'minPrice' => [],
+        'maxPrice' => [],
+        'selectedBrand' => [],
+    ];
+
+    protected $listeners = [ 'filtersUpdated' => 'updateFilters' ];
+
+    public function updateFilters( $filters ) {
+        $this->minPrice = $filters[ 'minPrice' ] ?? $this->minPrice;
+        $this->maxPrice = $filters[ 'maxPrice' ] ?? $this->maxPrice;
+        $this->selectedBrand = $filters[ 'brand' ] ?? $this->selectedBrand;
+
         $this->resetPage();
     }
 
-    public function render()
-    {
-        $query = Car::query();
+    public function render() {
+        $query = Car::with( [ 'images', 'brand' ] )
+        ->whereHas( 'images' )
+        ->whereBetween( 'price', [ $this->minPrice, $this->maxPrice ] );
 
-        if ($this->search) {
-            $query->where('make', 'like', "%{$this->search}%")
-                  ->orWhere('model', 'like', "%{$this->search}%");
+        if ( $this->selectedBrand ) {
+            $query->where( 'make_id', $this->selectedBrand );
         }
 
-        if ($this->brand) {
-            $query->where('make', $this->brand);
-        }
+        $cars = $query->paginate( 12 );
 
-        if ($this->minPrice) {
-            $query->where('price', '>=', $this->minPrice);
-        }
-
-        if ($this->maxPrice) {
-            $query->where('price', '<=', $this->maxPrice);
-        }
-
-        if ($this->fuelType) {
-            $query->where('engine', $this->fuelType);
-        }
-
-        switch ($this->sortBy) {
-            case 'price_asc':
-                $query->orderBy('price', 'asc');
-                break;
-            case 'price_desc':
-                $query->orderBy('price', 'desc');
-                break;
-            default:
-                $query->latest();
-                break;
-        }
-
-        $cars = $query->paginate(12);
-
-        return view('livewire.pages.cars-page', compact('cars'))
-            ->layout('components.layouts.app');
+        return view( 'livewire.pages.cars-page', compact( 'cars' ) )
+        ->layout( 'components.layouts.app' );
     }
 }

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
-            $table->string('make'); 
+            $table->unsignedBigInteger('make_id'); 
             $table->string('model');
             $table->string('category'); 
             $table->year('year');
@@ -28,9 +28,10 @@ return new class extends Migration
             $table->string('keys');
             $table->string('ownership'); 
             $table->timestamps();
+
+            $table->foreign('make_id')->references('id')->on('car_makes')->onDelete('cascade');
         });
     }
-
 
     /**
      * Reverse the migrations.

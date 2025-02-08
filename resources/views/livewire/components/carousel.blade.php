@@ -30,7 +30,7 @@
 
 
                         <div class="p-4 text-center">
-                            <h3 class="text-lg font-bold text-gray-800">{{ $car->make }} {{ $car->model }}</h3>
+                          <h3 class="text-lg font-bold text-gray-800">{{ $car->brand->name }} {{ $car->model }}</h3>
                             <p class="text-lg text-orange-500 font-semibold mb-4">{{ number_format($car->price, 2) }}
                                 лв.</p>
                             <a wire:navigate href="/cars/{{ $car->id }}"
@@ -57,7 +57,7 @@
 
 
                         <div class="p-4 text-center">
-                            <h3 class="text-lg font-bold text-gray-800">{{ $car->make }} {{ $car->model }}</h3>
+                           <h3 class="text-lg font-bold text-gray-800">{{ $car->brand->name }} {{ $car->model }}</h3>
                             <p class="text-lg text-orange-500 font-semibold mb-4">{{ number_format($car->price, 2) }}
                                 лв.</p>
                             <a wire:navigate href="/cars/{{ $car->id }}"

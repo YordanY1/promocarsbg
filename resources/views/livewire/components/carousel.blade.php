@@ -92,7 +92,7 @@
     </div>
 
     <div class="mt-12 flex justify-center">
-        <a wire:navigate href="/catalog"
+        <a wire:navigate href="/cars"
             class="bg-orange-500 text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-orange-600 transition transform hover:scale-105">
             Виж всички автомобили
         </a>

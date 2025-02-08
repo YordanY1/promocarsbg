@@ -11,8 +11,8 @@
                 <span
                     class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a wire:navigate href="/catalog" class="relative cursor-pointer hover:text-orange-500 transition group">
-                Каталог
+            <a wire:navigate href="/cars" class="relative cursor-pointer hover:text-orange-500 transition group">
+                Автомобили
                 <span
                     class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
             </a>
@@ -56,8 +56,8 @@
             <nav class="flex flex-col space-y-6 text-lg">
                 <a wire:navigate href="/" @click="open = false"
                     class="hover:text-orange-500 cursor-pointer transition">Начало</a>
-                <a wire:navigate href="/catalog" @click="open = false"
-                    class="hover:text-orange-500 cursor-pointer transition">Каталог</a>
+                <a wire:navigate href="/cars" @click="open = false"
+                    class="hover:text-orange-500 cursor-pointer transition">Автомобили</a>
                 <a wire:navigate href="/about" @click="open = false"
                     class="hover:text-orange-500 cursor-pointer transition">За нас</a>
                 <a wire:navigate href="/contacts" @click="open = false"

@@ -56,9 +56,11 @@
                 @foreach ($brands as $brand)
                     <button type="button"
                         class="flex flex-col items-center justify-center p-2 rounded-lg transition
-                        {{ $selectedMake == $brand->id ? 'bg-orange-500 text-white' : 'bg-gray-200 hover:bg-gray-300' }}
+                        {{ $selectedMake == $brand->id ? 'bg-orange-500 text-white' : 'bg-gray-200 hover:bg-gray-300' }}"
                         wire:click="setMakeFilter({{ $brand->id }})">
+
                         <img src="{{ asset($brand->logo) }}" alt="{{ $brand->name }}" class="w-12 h-12 object-cover">
+
                         <span class="text-sm font-semibold mt-2">{{ $brand->name }}</span>
                     </button>
                 @endforeach

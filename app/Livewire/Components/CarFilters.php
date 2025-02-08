@@ -9,35 +9,30 @@ class CarFilters extends Component {
     public $minPrice = 0;
     public $maxPrice = 300000;
     public $selectedMake = null;
-
     public $brands;
 
-    protected $listeners = [ 'updateFilters' ];
+    protected $listeners = ['updateFilters'];
 
     public function mount() {
-
         $this->brands = CarMake::all();
     }
 
-    public function setPriceRange( $min, $max ) {
+    public function setPriceRange($min, $max) {
         $this->minPrice = $min;
         $this->maxPrice = $max;
 
-        $this->dispatch( 'filtersUpdated', [
+        $this->dispatch('filtersUpdated', [
             'minPrice' => $this->minPrice,
             'maxPrice' => $this->maxPrice,
-            'make' => $this->selectedMake,
-        ] );
+        ]);
     }
 
-    public function setMakeFilter( $makeId ) {
+    public function setMakeFilter($makeId) {
         $this->selectedMake = $this->selectedMake === $makeId ? null : $makeId;
 
-        $this->dispatch( 'filtersUpdated', [
-            'minPrice' => $this->minPrice,
-            'maxPrice' => $this->maxPrice,
+        $this->dispatch('brandUpdated', [
             'selectedBrand' => $this->selectedMake,
-        ] );
+        ]);
     }
 
     public function resetFilters() {
@@ -45,16 +40,19 @@ class CarFilters extends Component {
         $this->maxPrice = 300000;
         $this->selectedMake = null;
 
-        $this->dispatch( 'filtersUpdated', [
+        $this->dispatch('filtersUpdated', [
             'minPrice' => $this->minPrice,
             'maxPrice' => $this->maxPrice,
-            'make' => $this->selectedMake,
-        ] );
+        ]);
+
+        $this->dispatch('brandUpdated', [
+            'selectedBrand' => null,
+        ]);
     }
 
     public function render() {
-        return view( 'livewire.components.car-filters', [
+        return view('livewire.components.car-filters', [
             'brands' => $this->brands,
-        ] );
+        ]);
     }
 }

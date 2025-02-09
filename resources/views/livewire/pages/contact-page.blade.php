@@ -1,6 +1,5 @@
 <div class="container mx-auto py-16 px-6">
     <div class="flex flex-col lg:flex-row bg-white shadow-lg rounded-lg overflow-hidden">
-        <!-- Контактна форма -->
         <div class="lg:w-1/2 p-12 flex flex-col justify-center">
             <h2 class="text-4xl font-bold text-orange-500 mb-6">Свържете се с нас</h2>
             <p class="text-gray-600 mb-6 text-lg">Изпратете ни съобщение и нашите експерти ще се свържат с вас възможно най-скоро.</p>

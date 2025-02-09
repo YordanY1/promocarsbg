@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             ReviewSeeder::class,  
             PromotionSeeder::class,
             CarImageSeeder::class,
+            FAQSeeder::class,
         ]);
     }
 }

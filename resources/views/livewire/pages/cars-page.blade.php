@@ -4,7 +4,8 @@
             Намерете своя перфектен автомобил 🚗💨
         </h1>
         <p class="text-gray-600 mt-2 max-w-2xl mx-auto">
-            Разгледайте нашия каталог с висококачествени автомобили на атрактивни цени. Използвайте удобните филтри, за да намерите кола, която отговаря на вашите изисквания.
+            Разгледайте нашия каталог с висококачествени автомобили на атрактивни цени. Използвайте удобните филтри, за
+            да намерите кола, която отговаря на вашите изисквания.
         </p>
     </div>
 
@@ -24,7 +25,7 @@
                                 {{ $car->year }} | {{ $car->engine }}
                             </p>
                             <p class="text-gray-600">
-                                Пробег: {{ number_format($car->mileage, 0, '', ' ') }} км
+                                Пробег: {{ number_format($car->mileage, 0, '', ' ') }} км.
                             </p>
                             <p class="text-gray-600">
                                 Трансмисия: {{ $car->transmission }}
@@ -46,9 +47,69 @@
                 @endforelse
             </div>
 
-            <div class="mt-8 flex justify-center">
-                {{ $cars->links() }}
+            <div class="mt-10">
+                @if ($cars->hasPages())
+                    <nav role="navigation" aria-label="Pagination Navigation"
+                        class="flex items-center justify-between space-x-2 md:space-x-4">
+
+                        @if ($cars->onFirstPage())
+                            <button
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray-500"
+                                disabled>
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                        @else
+                            <button wire:click="previousPage"
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-orange-500 text-white hover:bg-orange-600 transition">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                        @endif
+
+
+                        <div class="flex space-x-2 overflow-x-auto">
+                            @foreach ($cars->links()->elements as $element)
+                                @if (is_string($element))
+                                    <span
+                                        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray-500">{{ $element }}</span>
+                                @endif
+
+                                @if (is_array($element))
+                                    @foreach ($element as $page => $url)
+                                        @if ($page == $cars->currentPage())
+                                            <span
+                                                class="w-10 h-10 flex items-center justify-center rounded-full bg-orange-500 text-white">
+                                                {{ $page }}
+                                            </span>
+                                        @else
+                                            <button wire:click="gotoPage({{ $page }})"
+                                                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition">
+                                                {{ $page }}
+                                            </button>
+                                        @endif
+                                    @endforeach
+                                @endif
+                            @endforeach
+                        </div>
+
+
+                        @if ($cars->hasMorePages())
+                            <button wire:click="nextPage"
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-orange-500 text-white hover:bg-orange-600 transition">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        @else
+                            <button
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 text-gray-500"
+                                disabled>
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        @endif
+                    </nav>
+                @endif
             </div>
+
+
+
         </div>
     </div>
 </div>

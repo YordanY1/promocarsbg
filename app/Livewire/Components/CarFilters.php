@@ -4,55 +4,68 @@ namespace App\Livewire\Components;
 
 use Livewire\Component;
 use App\Models\CarMake;
+use App\Models\Car;
 
 class CarFilters extends Component {
-    public $minPrice = 0;
-    public $maxPrice = 300000;
-    public $selectedMake = null;
+    public $selectedPriceRanges = [];
+    public $selectedMakes = [];
+    public $selectedYears = [];
     public $brands;
+    public $availableYears = [];
 
-    protected $listeners = ['updateFilters'];
+    protected $listeners = [ 'updateFilters' ];
 
     public function mount() {
         $this->brands = CarMake::all();
+        $this->availableYears = Car::distinct()->orderBy( 'year', 'desc' )->pluck( 'year' )->toArray();
     }
 
-    public function setPriceRange($min, $max) {
-        $this->minPrice = $min;
-        $this->maxPrice = $max;
+    public function togglePriceRange( $min, $max ) {
+        $range = "{$min}-{$max}";
 
-        $this->dispatch('filtersUpdated', [
-            'minPrice' => $this->minPrice,
-            'maxPrice' => $this->maxPrice,
-        ]);
+        if ( in_array( $range, $this->selectedPriceRanges ) ) {
+            $this->selectedPriceRanges = array_filter( $this->selectedPriceRanges, fn( $r ) => $r !== $range );
+        } else {
+            $this->selectedPriceRanges[] = $range;
+        }
+
+        $this->dispatch( 'filtersUpdated', [ 'selectedPriceRanges' => $this->selectedPriceRanges ] );
     }
 
-    public function setMakeFilter($makeId) {
-        $this->selectedMake = $this->selectedMake === $makeId ? null : $makeId;
+    public function toggleMake( $makeId ) {
+        if ( in_array( $makeId, $this->selectedMakes ) ) {
+            $this->selectedMakes = array_filter( $this->selectedMakes, fn( $id ) => $id !== $makeId );
+        } else {
+            $this->selectedMakes[] = $makeId;
+        }
 
-        $this->dispatch('brandUpdated', [
-            'selectedBrand' => $this->selectedMake,
-        ]);
+        $this->dispatch( 'brandUpdated', [ 'selectedBrands' => $this->selectedMakes ] );
+    }
+
+    public function toggleYear( $year ) {
+        if ( in_array( $year, $this->selectedYears ) ) {
+            $this->selectedYears = array_filter( $this->selectedYears, fn( $y ) => $y !== $year );
+        } else {
+            $this->selectedYears[] = $year;
+        }
+
+        $this->dispatch( 'yearUpdated', [ 'selectedYears' => $this->selectedYears ] );
     }
 
     public function resetFilters() {
-        $this->minPrice = 0;
-        $this->maxPrice = 300000;
-        $this->selectedMake = null;
+        $this->selectedPriceRanges = [];
+        $this->selectedMakes = [];
+        $this->selectedYears = [];
 
-        $this->dispatch('filtersUpdated', [
-            'minPrice' => $this->minPrice,
-            'maxPrice' => $this->maxPrice,
-        ]);
-
-        $this->dispatch('brandUpdated', [
-            'selectedBrand' => null,
-        ]);
+        $this->dispatch( 'filtersUpdated', [ 'selectedPriceRanges' => [] ] );
+        $this->dispatch( 'brandUpdated', [ 'selectedBrands' => [] ] );
+        $this->dispatch( 'yearUpdated', [ 'selectedYears' => [] ] );
     }
 
     public function render() {
-        return view('livewire.components.car-filters', [
+        return view( 'livewire.components.car-filters', [
             'brands' => $this->brands,
-        ]);
+            'availableYears' => $this->availableYears
+        ] );
     }
 }

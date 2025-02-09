@@ -9,40 +9,58 @@ use App\Models\Car;
 class CarsPage extends Component {
     use WithPagination;
 
-    public $minPrice = 0;
-    public $maxPrice = 300000;
-    public $selectedBrand = null;
+    public $selectedPriceRanges = [];
+    public $selectedBrands = [];
+    public $selectedYears = [];
 
     protected $queryString = [
-        'minPrice' => [],
-        'maxPrice' => [],
-        'selectedBrand' => [],
+        'selectedPriceRanges' => [],
+        'selectedBrands' => [],
+        'selectedYears' => [],
     ];
 
     protected $listeners = [
         'filtersUpdated' => 'updateFilters',
-        'brandUpdated' => 'updateBrandFilter'
+        'brandUpdated' => 'updateBrandFilter',
+        'yearUpdated' => 'updateYearFilter',
     ];
 
     public function updateFilters($filters) {
-        $this->minPrice = $filters['minPrice'] ?? $this->minPrice;
-        $this->maxPrice = $filters['maxPrice'] ?? $this->maxPrice;
+        $this->selectedPriceRanges = $filters['selectedPriceRanges'] ?? [];
         $this->resetPage();
     }
 
     public function updateBrandFilter($filters) {
-        $this->selectedBrand = $filters['selectedBrand'] ?? null;
+        $this->selectedBrands = $filters['selectedBrands'] ?? [];
+        $this->resetPage();
+    }
+
+    public function updateYearFilter($filters) {
+        $this->selectedYears = $filters['selectedYears'] ?? [];
         $this->resetPage();
     }
 
     public function render() {
         $query = Car::with(['images', 'brand'])->whereHas('images');
 
-        if ($this->selectedBrand) {
-            $query->where('make_id', $this->selectedBrand);
+        if (!empty($this->selectedBrands)) {
+            $query->whereIn('make_id', $this->selectedBrands);
         }
 
-        $cars = $query->whereBetween('price', [$this->minPrice, $this->maxPrice])->paginate(12);
+        if (!empty($this->selectedYears)) {
+            $query->whereIn('year', $this->selectedYears);
+        }
+
+        if (!empty($this->selectedPriceRanges)) {
+            $query->where(function ($q) {
+                foreach ($this->selectedPriceRanges as $range) {
+                    [$min, $max] = explode('-', $range);
+                    $q->orWhereBetween('price', [$min, $max]);
+                }
+            });
+        }
+
+        $cars = $query->paginate(12);
 
         return view('livewire.pages.cars-page', compact('cars'))
             ->layout('components.layouts.app');

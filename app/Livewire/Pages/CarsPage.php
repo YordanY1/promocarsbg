@@ -60,7 +60,7 @@ class CarsPage extends Component {
             });
         }
 
-        $cars = $query->paginate(12);
+        $cars = $query->paginate(12)->withPath('custom');;
 
         return view('livewire.pages.cars-page', compact('cars'))
             ->layout('components.layouts.app');

@@ -18,7 +18,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
 
                         @if ($review && $review->car)
-                            <img src="{{ asset($review->car->image) }}" alt="{{ $review->car->make }}"
+                            <img src="{{ asset($review->car->images->first()->path) }}" alt="{{ $review->car->make }}"
                                 class="w-full h-auto rounded-lg shadow-lg">
                         @endif
 

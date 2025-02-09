@@ -31,46 +31,33 @@
             <div>
                 <h3 class="text-xl font-semibold mb-3">Навигация</h3>
                 <ul class="space-y-2">
-                    <li><a href="https://www.google.com" target="_blank" class="group relative inline-block text-gray-300">
+                    <li><a wire:navigate href="{{ route('about') }}" class="group relative inline-block text-gray-300">
                         За нас
                         <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-300 transition-all duration-300 group-hover:w-full"></span>
                     </a></li>
-                    <li><a href="https://www.google.com" target="_blank" class="group relative inline-block text-gray-300">
+                    <li><a wire:navigate href="{{ route('reviews') }}" class="group relative inline-block text-gray-300">
                         Отзиви
                         <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-300 transition-all duration-300 group-hover:w-full"></span>
                     </a></li>
-                    <li><a href="https://www.google.com" target="_blank" class="group relative inline-block text-gray-300">
+                    <li><a wire:navigate href="{{ route('faq') }}" class="group relative inline-block text-gray-300">
                         Въпроси и отговори
                         <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-300 transition-all duration-300 group-hover:w-full"></span>
                     </a></li>
-                    <li><a href="https://www.google.com" target="_blank" class="group relative inline-block text-gray-300">
+                    <li><a wire:navigate href="{{ route('contacts') }}" class="group relative inline-block text-gray-300">
                         Контакти
-                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-300 transition-all duration-300 group-hover:w-full"></span>
-                    </a></li>
-                    <li><a href="https://www.google.com" target="_blank" class="group relative inline-block text-gray-300">
-                        Автомобили
                         <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-300 transition-all duration-300 group-hover:w-full"></span>
                     </a></li>
                 </ul>
             </div>
 
             <div>
-                <h3 class="text-xl font-semibold mb-3">Намери ни</h3>
-                <p class="text-gray-300">
-                    📍 <a href="https://www.google.com/maps/search/?q=Пловдив,+бул.+България+12,+офис+207" target="_blank"
-                        class="group relative inline-block text-gray-300 hover:text-orange-300">
-                        гр. Пловдив, бул. България 12, офис 207
+                <h3 class="text-xl font-semibold mb-3">Автомобили</h3>
+                <ul class="space-y-2">
+                    <li><a wire:navigate href="{{ route('cars') }}" class="group relative inline-block text-gray-300">
+                        Обяви
                         <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-300 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                </p>
-                <p class="text-gray-300 mt-2">📞 <a href="tel:+359885654321" class="group relative inline-block text-gray-300">
-                    +359 885 654 321
-                    <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-300 transition-all duration-300 group-hover:w-full"></span>
-                </a></p>
-                <p class="text-gray-300">📧 <a href="mailto:support@promocars.bg" class="group relative inline-block text-gray-300">
-                    support@promocars.bg
-                    <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-300 transition-all duration-300 group-hover:w-full"></span>
-                </a></p>
+                    </a></li>
+                </ul>
             </div>
         </div>
 

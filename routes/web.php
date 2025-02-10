@@ -11,6 +11,9 @@ use App\Livewire\Pages\FaqPage;
 use App\Livewire\Pages\CookiePolicy;
 use App\Livewire\Pages\PolicyPrivacy;
 
+use App\Http\Controllers\SitemapController;
+
+
 Route::get('/', HomePage::class)->name('home');
 Route::get('/cars', CarsPage::class)->name('cars');
 Route::get('/cars/{slug}', CarDetailsPage::class)->name('car.details');
@@ -20,3 +23,5 @@ Route::get('/reviews', ReviewsPage::class)->name('reviews');
 Route::get('/faq', FaqPage::class)->name('faq');
 Route::get('/cookie-policy', CookiePolicy::class)->name('cookie-policy');
 Route::get('/policy-privacy', PolicyPrivacy::class)->name('policy-privacy');
+
+Route::get('/sitemap.xml', [SitemapController::class, 'index']);

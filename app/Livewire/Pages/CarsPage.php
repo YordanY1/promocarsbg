@@ -60,9 +60,14 @@ class CarsPage extends Component {
             });
         }
 
-        $cars = $query->paginate(12)->withPath('custom');;
+        $cars = $query->paginate(12)->withPath('custom');
 
         return view('livewire.pages.cars-page', compact('cars'))
-            ->layout('components.layouts.app');
+            ->layout('components.layouts.app', [
+                'metaTitle' => 'Купи автомобил | Разгледай всички налични коли в PromoCars BG',
+                'metaDescription' => 'Разгледайте най-добрите оферти за нови и употребявани автомобили в България. Изберете от марки като BMW, Mercedes-Benz, Audi, Volkswagen, Toyota, Ford, Honda, Nissan, Peugeot и Renault. Купете своята мечтана кола с гаранция за качество!',
+                'metaKeywords' => 'автомобили, коли, нови автомобили, употребявани автомобили, авто обяви, авто пазар, BMW, Mercedes, Audi, Volkswagen, Toyota, Ford, Nissan, Honda, Peugeot, Renault, Hyundai, Opel, Skoda, Volvo, Porsche, купи кола, лизинг автомобили, финансиране на коли, продажба на коли',
+                'metaAuthor' => 'PromoCars BG - Довереният ви партньор в покупката на автомобили',
+            ]);
     }
 }

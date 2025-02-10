@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('model');
             $table->string('category'); 
             $table->year('year');
+            $table->string('slug')->unique();
+            $table->text('description');
             $table->integer('mileage');
             $table->string('transmission');
             $table->string('engine'); 

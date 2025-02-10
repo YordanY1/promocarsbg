@@ -20,25 +20,35 @@
                             alt="{{ $car->brand->name }}" class="w-full h-48 object-cover rounded-lg">
 
                         <div class="mt-4">
-                            <h3 class="text-lg font-bold text-gray-800">{{ $car->brand->name }} {{ $car->model }}</h3>
-                            <p class="text-gray-600">
-                                {{ $car->year }} | {{ $car->engine }}
-                            </p>
-                            <p class="text-gray-600">
-                                Пробег: {{ number_format($car->mileage, 0, '', ' ') }} км.
-                            </p>
-                            <p class="text-gray-600">
-                                Трансмисия: {{ $car->transmission }}
-                            </p>
-                            <p class="text-lg font-semibold text-orange-500">
-                                {{ number_format($car->price, 2) }} лв.
-                            </p>
+                            <div class="mt-4 space-y-2">
+                                <h3 class="text-lg font-bold text-gray-800">{{ $car->brand->name }} {{ $car->model }}
+                                </h3>
 
-                            <a href="/cars/{{ $car->id }}"
-                                class="mt-4 inline-block bg-orange-500 text-white px-6 py-2 rounded-lg text-sm hover:bg-orange-600 transition">
-                                Разгледай
-                            </a>
+                                <p class="text-gray-600">
+                                    {{ $car->year }} | {{ $car->engine }}
+                                </p>
+
+                                <p class="text-gray-600">
+                                    Пробег: {{ number_format($car->mileage, 0, '', ' ') }} км.
+                                </p>
+
+                                <p class="text-gray-600">
+                                    Трансмисия: {{ $car->transmission }}
+                                </p>
+
+                                <p class="text-lg font-semibold text-orange-500">
+                                    {{ number_format($car->price, 2) }} лв.
+                                </p>
+                            </div>
+
+                            <div class="flex justify-end mt-4">
+                                <a wire:navigate href="{{ route('car.details', ['slug' => $car->slug]) }}"
+                                    class="bg-orange-500 text-white px-6 py-2 rounded-lg text-sm hover:bg-orange-600 transition">
+                                    Разгледай
+                                </a>
+                            </div>
                         </div>
+
                     </div>
                 @empty
                     <div class="col-span-full text-center text-gray-600">
@@ -46,6 +56,7 @@
                     </div>
                 @endforelse
             </div>
+
 
             <div class="mt-10">
                 @if ($cars->hasPages())

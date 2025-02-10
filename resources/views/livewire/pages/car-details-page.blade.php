@@ -70,7 +70,7 @@
                 <div
                     class="relative inline-block px-6 py-3 
                 text-3xl sm:text-4xl md:text-5xl font-extrabold text-white rounded-lg shadow-lg
-                bg-gradient-to-r from-orange-500 to-red-600 transform hover:scale-105 transition">
+                bg-gradient-to-r from-[#b01e45] to-[#9a1b3d] transform hover:scale-105 transition">
                     {{ number_format($car->price, 2) }} лв.
                     <span
                         class="absolute -top-2 -right-3 sm:-top-3 sm:-right-5 bg-yellow-400 text-black text-[10px] sm:text-xs font-bold px-2 py-1 rounded-lg">
@@ -109,7 +109,7 @@
 
             <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
                 <a wire:navigate href="/contacts"
-                    class="flex items-center justify-center bg-orange-500 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-orange-600 transition shadow-md transform hover:scale-105">
+                    class="flex items-center justify-center bg-[#b01e45] text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-[#9a1b3d] transition shadow-md transform hover:scale-105">
                     📩 Запитване
                 </a>
                 <a wire:navigate href="/cars"

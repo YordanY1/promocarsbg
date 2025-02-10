@@ -1,40 +1,40 @@
 <header x-data="{ open: false }" class="bg-black text-white shadow-md z-4000">
     <div class="container mx-auto flex justify-between items-center py-4 px-6">
 
-        <a wire:navigate href="/" class="text-2xl font-bold text-orange-500 cursor-pointer">
+        <a wire:navigate href="/" class="text-2xl font-bold text-[#b01e45] cursor-pointer">
             PromoCars BG
         </a>
 
         <nav class="hidden md:flex space-x-8 text-lg">
-            <a wire:navigate href="/" class="relative cursor-pointer hover:text-orange-500 transition group">
+            <a wire:navigate href="/" class="relative cursor-pointer hover:text-[#b01e45] transition group">
                 Начало
                 <span
-                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#b01e45] transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a wire:navigate href="/cars" class="relative cursor-pointer hover:text-orange-500 transition group">
+            <a wire:navigate href="/cars" class="relative cursor-pointer hover:text-[#b01e45] transition group">
                 Автомобили
                 <span
-                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#b01e45] transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a wire:navigate href="/about" class="relative cursor-pointer hover:text-orange-500 transition group">
+            <a wire:navigate href="/about" class="relative cursor-pointer hover:text-[#b01e45] transition group">
                 За нас
                 <span
-                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#b01e45] transition-all duration-300 group-hover:w-full"></span>
             </a>
-            <a wire:navigate href="/contacts" class="relative cursor-pointer hover:text-orange-500 transition group">
+            <a wire:navigate href="/contacts" class="relative cursor-pointer hover:text-[#b01e45] transition group">
                 Контакти
                 <span
-                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full"></span>
+                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#b01e45] transition-all duration-300 group-hover:w-full"></span>
             </a>
         </nav>
         <a wire:navigate href="/contacts"
-            class="hidden md:block bg-orange-500 text-white px-6 py-2 rounded-lg text-lg 
-           hover:bg-orange-600 transition-all duration-500 ease-in-out 
+            class="hidden md:block bg-[#b01e45] text-white px-6 py-2 rounded-lg text-lg 
+           hover:bg-[#9a1b3d] transition-all duration-500 ease-in-out 
            hover:scale-105 shadow-lg animate-fade-in-up">
             Безплатна консултация
         </a>
 
-        <button @click="open = !open" class="md:hidden text-orange-500 focus:outline-none">
+        <button @click="open = !open" class="md:hidden text-[#b01e45] focus:outline-none">
             ☰
         </button>
 
@@ -49,24 +49,25 @@
                 ✕
             </button>
 
-            <a wire:navigate href="/" class="text-3xl font-bold text-orange-500 mb-6">
+            <a wire:navigate href="/" class="text-3xl font-bold text-[#b01e45] mb-6">
                 PromoCars BG
             </a>
 
             <nav class="flex flex-col space-y-6 text-lg">
                 <a wire:navigate href="/" @click="open = false"
-                    class="hover:text-orange-500 cursor-pointer transition">Начало</a>
+                    class="hover:text-[#b01e45] cursor-pointer transition">Начало</a>
                 <a wire:navigate href="/cars" @click="open = false"
-                    class="hover:text-orange-500 cursor-pointer transition">Автомобили</a>
+                    class="hover:text-[#b01e45] cursor-pointer transition">Автомобили</a>
                 <a wire:navigate href="/about" @click="open = false"
-                    class="hover:text-orange-500 cursor-pointer transition">За нас</a>
+                    class="hover:text-[#b01e45] cursor-pointer transition">За нас</a>
                 <a wire:navigate href="/contacts" @click="open = false"
-                    class="hover:text-orange-500 cursor-pointer transition">Контакти</a>
+                    class="hover:text-[#b01e45] cursor-pointer transition">Контакти</a>
             </nav>
 
             <div class="mt-20 w-full text-center">
                 <a wire:navigate href="/contacts" @click="open = false"
-                    class="bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-6 py-3 rounded-lg text-lg hover:from-orange-600 hover:to-yellow-600 transition">
+                    class="bg-[#b01e45] text-white px-6 py-3 rounded-lg text-lg 
+                    hover:bg-[#9a1b3d] transition">
                     Направи поръчка
                 </a>
             </div>

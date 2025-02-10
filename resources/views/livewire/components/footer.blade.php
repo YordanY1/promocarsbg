@@ -1,5 +1,5 @@
 <div>
-    <footer class="bg-gradient-to-b from-orange-500 to-black text-white py-10 px-6 md:px-16">
+    <footer class="bg-gradient-to-b from-[#b01e45] to-black text-white py-10 px-6 md:px-16">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6">
 
             <div class="space-y-4">
@@ -10,21 +10,21 @@
                     <p>📞 <a href="tel:+359888123456" class="group relative inline-block text-gray-300">
                             +359 888 123 456
                             <span
-                                class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-300 transition-all duration-300 group-hover:w-full"></span>
+                                class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#9a1b3d] transition-all duration-300 group-hover:w-full"></span>
                         </a></p>
 
                     <p>📧 <a href="mailto:contact@promocars.bg" class="group relative inline-block text-gray-300">
                             contact@promocars.bg
                             <span
-                                class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-300 transition-all duration-300 group-hover:w-full"></span>
+                                class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#9a1b3d] transition-all duration-300 group-hover:w-full"></span>
                         </a></p>
                 </div>
 
                 <div class="flex space-x-4 mt-4">
-                    <a href="#" class="group relative inline-block text-gray-300 hover:text-orange-300 text-2xl">
+                    <a href="#" class="group relative inline-block text-gray-300 hover:text-[#9a1b3d] text-2xl">
                         <i class="fa-brands fa-facebook"></i>
                     </a>
-                    <a href="#" class="group relative inline-block text-gray-300 hover:text-orange-300 text-2xl">
+                    <a href="#" class="group relative inline-block text-gray-300 hover:text-[#9a1b3d] text-2xl">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
                 </div>
@@ -36,24 +36,24 @@
                     <li><a wire:navigate href="{{ route('about') }}" class="group relative inline-block text-gray-300">
                             За нас
                             <span
-                                class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-300 transition-all duration-300 group-hover:w-full"></span>
+                                class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#9a1b3d] transition-all duration-300 group-hover:w-full"></span>
                         </a></li>
                     <li><a wire:navigate href="{{ route('reviews') }}"
                             class="group relative inline-block text-gray-300">
                             Отзиви
                             <span
-                                class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-300 transition-all duration-300 group-hover:w-full"></span>
+                                class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#9a1b3d] transition-all duration-300 group-hover:w-full"></span>
                         </a></li>
                     <li><a wire:navigate href="{{ route('faq') }}" class="group relative inline-block text-gray-300">
                             Въпроси и отговори
                             <span
-                                class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-300 transition-all duration-300 group-hover:w-full"></span>
+                                class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#9a1b3d] transition-all duration-300 group-hover:w-full"></span>
                         </a></li>
                     <li><a wire:navigate href="{{ route('contacts') }}"
                             class="group relative inline-block text-gray-300">
                             Контакти
                             <span
-                                class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-300 transition-all duration-300 group-hover:w-full"></span>
+                                class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#9a1b3d] transition-all duration-300 group-hover:w-full"></span>
                         </a></li>
                 </ul>
             </div>
@@ -64,7 +64,7 @@
                     <li><a wire:navigate href="{{ route('cars') }}" class="group relative inline-block text-gray-300">
                             Обяви
                             <span
-                                class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-300 transition-all duration-300 group-hover:w-full"></span>
+                                class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#9a1b3d] transition-all duration-300 group-hover:w-full"></span>
                         </a></li>
                 </ul>
             </div>
@@ -76,13 +76,13 @@
                 <a wire:navigate href="{{ route('policy-privacy') }}" class="group relative inline-block text-gray-300">
                     Политика за поверителност
                     <span
-                        class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-300 transition-all duration-300 group-hover:w-full"></span>
+                        class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#9a1b3d] transition-all duration-300 group-hover:w-full"></span>
                 </a>
                 <span>|</span>
                 <a wire:navigate href="{{ route('cookie-policy') }}" class="group relative inline-block text-gray-300">
                     Бисквитки
                     <span
-                        class="absolute left-0 bottom-0 w-0 h-0.5 bg-orange-300 transition-all duration-300 group-hover:w-full"></span>
+                        class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#9a1b3d] transition-all duration-300 group-hover:w-full"></span>
                 </a>
             </div>
         </div>

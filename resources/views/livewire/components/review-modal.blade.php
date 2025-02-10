@@ -3,15 +3,13 @@
         <div class="fixed inset-0 flex items-center justify-center z-50">
             <div class="w-full max-w-4xl p-6 relative bg-transparent">
 
-
                 <button wire:click="closeModal" class="absolute top-3 right-3 text-gray-300 hover:text-white text-3xl">
                     ✕
                 </button>
 
                 <div class="bg-white bg-opacity-80 backdrop-blur-lg rounded-lg shadow-lg p-8">
 
-
-                    <h3 class="text-3xl font-bold text-orange-500 mb-6 text-center">
+                    <h3 class="text-3xl font-bold text-[#b01e45] mb-6 text-center">
                         {{ $review->name ?? 'Клиент' }} - Доволен клиент
                     </h3>
 
@@ -29,7 +27,8 @@
 
                             <div class="mt-6 text-center">
                                 <button wire:click="closeModal"
-                                    class="bg-orange-500 text-white px-6 py-3 rounded-lg text-lg w-full md:w-auto hover:bg-orange-600 transition">
+                                    class="bg-[#b01e45] text-white px-6 py-3 rounded-lg text-lg w-full md:w-auto 
+                                    hover:bg-[#9a1b3d] transition">
                                     Затвори
                                 </button>
                             </div>

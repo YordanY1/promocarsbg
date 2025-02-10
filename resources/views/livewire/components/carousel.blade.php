@@ -30,10 +30,10 @@
 
 
                         <div class="p-4 text-center">
-                          <h3 class="text-lg font-bold text-gray-800">{{ $car->brand->name }} {{ $car->model }}</h3>
+                            <h3 class="text-lg font-bold text-gray-800">{{ $car->brand->name }} {{ $car->model }}</h3>
                             <p class="text-lg text-orange-500 font-semibold mb-4">{{ number_format($car->price, 2) }}
                                 лв.</p>
-                            <a wire:navigate href="/cars/{{ $car->id }}"
+                            <a wire:navigate href="{{ route('car.details', ['slug' => $car->slug]) }}"
                                 class="bg-orange-500 text-white px-6 py-2 rounded-lg text-sm hover:bg-orange-600 transition">
                                 Разгледай
                             </a>
@@ -57,13 +57,15 @@
 
 
                         <div class="p-4 text-center">
-                           <h3 class="text-lg font-bold text-gray-800">{{ $car->brand->name }} {{ $car->model }}</h3>
+                            <h3 class="text-lg font-bold text-gray-800">{{ $car->brand->name }} {{ $car->model }}
+                            </h3>
                             <p class="text-lg text-orange-500 font-semibold mb-4">{{ number_format($car->price, 2) }}
                                 лв.</p>
-                            <a wire:navigate href="/cars/{{ $car->id }}"
+                            <a wire:navigate href="{{ route('car.details', ['slug' => $car->slug]) }}"
                                 class="bg-orange-500 text-white px-6 py-2 rounded-lg text-sm hover:bg-orange-600 transition">
                                 Разгледай
                             </a>
+
                         </div>
 
                     </div>
@@ -85,8 +87,11 @@
         @foreach (range(0, ceil($cars->count() / 3) - 1) as $index)
             <button @click="currentIndex = {{ $index }}"
                 class="w-3 h-3 rounded-full transition focus:outline-none"
-                :class="{ 'bg-orange-500': currentIndex === {{ $index }}, 'bg-gray-400': currentIndex !==
-                        {{ $index }} }">
+                :class="{
+                    'bg-orange-500': currentIndex === {{ $index }},
+                    'bg-gray-400': currentIndex !==
+                        {{ $index }}
+                }">
             </button>
         @endforeach
     </div>

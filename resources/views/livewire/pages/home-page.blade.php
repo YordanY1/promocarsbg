@@ -1,5 +1,7 @@
 <div>
 
+    @livewire('components.cookie-consent')
+    
     <div class="relative w-full min-h-[180vh] md:min-h-screen">
         <img src="{{ asset('images/backgrounds/background.jpg') }}" class="absolute inset-0 w-full h-full object-cover">
 
@@ -36,5 +38,6 @@
         </h2>
         @livewire('components.carousel')
     </div>
+    
 
 </div>

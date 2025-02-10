@@ -9,19 +9,18 @@ use Illuminate\Support\Str;
 class Car extends Model {
     use HasFactory;
 
-    protected $guarded = [ 'id' ];
+    protected $guarded = ['id'];
 
     public function reviews() {
-        return $this->hasMany( Review::class );
+        return $this->hasMany(Review::class);
     }
 
     public function images() {
-        return $this->hasMany( CarImage::class );
+        return $this->hasMany(CarImage::class);
     }
 
     public function brand() {
-        return $this->belongsTo( CarMake::class, 'make_id', 'id' );
-
+        return $this->belongsTo(CarMake::class, 'make_id', 'id');
     }
 
     public static function boot()
@@ -29,22 +28,42 @@ class Car extends Model {
         parent::boot();
 
         static::creating(function ($car) {
-            $car->load('brand'); 
-            if ($car->brand) {
-                $baseSlug = Str::slug("{$car->brand->name}-{$car->model}");
-                $count = Car::where('slug', 'LIKE', "$baseSlug%")->count();
-                $car->slug = $count > 0 ? "{$baseSlug}-" . ($count + 1) : $baseSlug;
-            }
+            $car->generateUniqueSlug();
         });
 
         static::updating(function ($car) {
-            $car->load('brand');
-            if ($car->brand) {
-                $baseSlug = Str::slug("{$car->brand->name}-{$car->model}");
-                $count = Car::where('slug', 'LIKE', "$baseSlug%")->where('id', '!=', $car->id)->count();
-                $car->slug = $count > 0 ? "{$baseSlug}-" . ($count + 1) : $baseSlug;
+            if ($car->isDirty(['make_id', 'model'])) {
+                $car->generateUniqueSlug();
             }
         });
+
+        static::saved(fn() => cache()->forget('sitemap'));
+        static::deleted(fn() => cache()->forget('sitemap'));
     }
 
+
+    private function generateUniqueSlug()
+    {
+        $this->load('brand');
+
+        if ($this->brand) {
+            $baseSlug = Str::slug("{$this->brand->name}-{$this->model}");
+
+           
+            $existingSlugs = Car::where('slug', 'LIKE', "$baseSlug%")
+                                ->where('id', '!=', $this->id)
+                                ->pluck('slug')
+                                ->toArray();
+
+            if (in_array($baseSlug, $existingSlugs)) {
+                $suffix = 1;
+                while (in_array("{$baseSlug}-{$suffix}", $existingSlugs)) {
+                    $suffix++;
+                }
+                $this->slug = "{$baseSlug}-{$suffix}";
+            } else {
+                $this->slug = $baseSlug;
+            }
+        }
+    }
 }

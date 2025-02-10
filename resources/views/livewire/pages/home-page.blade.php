@@ -7,7 +7,7 @@
 
         <div
             class="absolute inset-0 flex flex-col items-center justify-start pt-20 md:justify-center text-white bg-black/50 px-6 space-y-8 md:space-y-12">
-            <h1 class="text-3xl md:text-5xl font-bold text-orange-500 text-center animate-fade-in-up">
+            <h1 class="text-3xl md:text-5xl font-bold text-[#b01e45] text-center animate-fade-in-up">
                 Добре дошли в PromoCars BG
             </h1>
             <p class="text-base md:text-xl text-gray-200 text-center animate-fade-in">
@@ -38,6 +38,5 @@
         </h2>
         @livewire('components.carousel')
     </div>
-    
 
 </div>

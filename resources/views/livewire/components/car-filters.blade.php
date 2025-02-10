@@ -24,7 +24,7 @@
 
             @foreach ($priceRanges as [$min, $max, $label])
                 <button type="button" class="w-full px-4 py-2 rounded-lg font-semibold transition-all duration-300"
-                    :class="{ 'bg-orange-500 text-white': selectedPrices.includes('{{ $min }}-{{ $max }}') }"
+                    :class="{ 'bg-[#b01e45] text-white': selectedPrices.includes('{{ $min }}-{{ $max }}') }"
                     wire:click="togglePriceRange({{ $min }}, {{ $max }})">
                     {{ $label }}
                 </button>
@@ -42,7 +42,7 @@
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                 @foreach ($brands as $brand)
                     <button type="button" class="flex flex-col items-center justify-center p-2 rounded-lg transition"
-                        :class="{ 'bg-orange-500 text-white': selectedMakes.includes({{ $brand->id }}) }"
+                        :class="{ 'bg-[#b01e45] text-white': selectedMakes.includes({{ $brand->id }}) }"
                         wire:click="toggleMake({{ $brand->id }})">
                         <img src="{{ asset($brand->logo) }}" alt="{{ $brand->name }}" class="w-12 h-12 object-cover">
                         <span class="text-sm font-semibold mt-2">{{ $brand->name }}</span>
@@ -51,7 +51,6 @@
             </div>
         </div>
     </div>
-
 
     <div x-data="{ openYears: false, selectedYears: @entangle('selectedYears') }">
         <button @click="openYears = !openYears"
@@ -63,7 +62,7 @@
             <div class="grid grid-cols-3 gap-2">
                 @foreach ($availableYears as $year)
                     <button type="button" class="px-4 py-2 rounded-lg font-semibold transition-all duration-300"
-                        :class="{ 'bg-orange-500 text-white': selectedYears.includes({{ $year }}) }"
+                        :class="{ 'bg-[#b01e45] text-white': selectedYears.includes({{ $year }}) }"
                         wire:click="toggleYear({{ $year }})">
                         {{ $year }}
                     </button>
@@ -71,7 +70,6 @@
             </div>
         </div>
     </div>
-
 
     <button type="button"
         class="w-full px-4 py-2 rounded-lg font-semibold text-white bg-black hover:bg-gray-800 transition-all duration-300"

@@ -1,4 +1,5 @@
 <div class="container mx-auto py-10 px-4 md:px-6">
+
     <div class="text-center mb-8">
         <h1 class="text-3xl font-extrabold text-gray-900">
             Намерете своя перфектен автомобил 🚗💨
@@ -36,14 +37,14 @@
                                     Трансмисия: {{ $car->transmission }}
                                 </p>
 
-                                <p class="text-lg font-semibold text-orange-500">
+                                <p class="text-lg font-semibold text-[#b01e45]">
                                     {{ number_format($car->price, 2) }} лв.
                                 </p>
                             </div>
 
                             <div class="flex justify-end mt-4">
                                 <a wire:navigate href="{{ route('car.details', ['slug' => $car->slug]) }}"
-                                    class="bg-orange-500 text-white px-6 py-2 rounded-lg text-sm hover:bg-orange-600 transition">
+                                    class="bg-[#b01e45] text-white px-6 py-2 rounded-lg text-sm hover:bg-[#9a1b3d] transition">
                                     Разгледай
                                 </a>
                             </div>
@@ -71,7 +72,7 @@
                             </button>
                         @else
                             <button wire:click="previousPage"
-                                class="w-10 h-10 flex items-center justify-center rounded-full bg-orange-500 text-white hover:bg-orange-600 transition">
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-[#b01e45] text-white hover:bg-[#9a1b3d] transition">
                                 <i class="fas fa-chevron-left"></i>
                             </button>
                         @endif
@@ -88,7 +89,7 @@
                                     @foreach ($element as $page => $url)
                                         @if ($page == $cars->currentPage())
                                             <span
-                                                class="w-10 h-10 flex items-center justify-center rounded-full bg-orange-500 text-white">
+                                                class="w-10 h-10 flex items-center justify-center rounded-full bg-[#b01e45] text-white">
                                                 {{ $page }}
                                             </span>
                                         @else
@@ -105,7 +106,7 @@
 
                         @if ($cars->hasMorePages())
                             <button wire:click="nextPage"
-                                class="w-10 h-10 flex items-center justify-center rounded-full bg-orange-500 text-white hover:bg-orange-600 transition">
+                                class="w-10 h-10 flex items-center justify-center rounded-full bg-[#b01e45] text-white hover:bg-[#9a1b3d] transition">
                                 <i class="fas fa-chevron-right"></i>
                             </button>
                         @else

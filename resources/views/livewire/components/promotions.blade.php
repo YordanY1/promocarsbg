@@ -1,4 +1,4 @@
-<div class="bg-gray-100 p-4 md:p-6 rounded-lg shadow-lg mx-4 md:mx-0">
+<div class="bg-gray-100 p-4 sm:p-5 md:p-6 rounded-lg shadow-lg mx-auto w-full max-w-6xl">
     <h2 class="text-2xl md:text-3xl font-bold text-center text-[#b01e45] animate-fade-in-up">
         Текущи промоции
     </h2>
@@ -8,7 +8,7 @@
             Няма активни промоции в момента.
         </p>
     @else
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8 w-full max-w-5xl mx-auto">
             @foreach($promotions as $promotion)
                 <div class="bg-white p-6 rounded-lg shadow-md text-center flex flex-col 
                             transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-xl 

@@ -79,7 +79,7 @@
                 </div>
             </div>
 
-            <p class="text-gray-600 text-lg text-center">{{ $car->category }}</p>
+            <p class="text-gray-600 text-2xl font-semibold text-center">{{ $car->category }}</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700">
                 <p class="flex items-center"><strong class="text-gray-900 mr-2">📅 Година:</strong> {{ $car->year }}

@@ -1,9 +1,10 @@
 <header x-data="{ open: false }" class="bg-black text-white shadow-md z-4000">
     <div class="container mx-auto flex justify-between items-center py-4 px-6">
 
-        <a wire:navigate href="/" class="text-2xl font-bold text-[#b01e45] cursor-pointer">
-            PromoCars BG
+        <a wire:navigate href="/" class="cursor-pointer">
+            <img src="{{ asset('images/brand/logo.png') }}" alt="PromoCars BG" class="h-12 md:h-16">
         </a>
+
 
         <nav class="hidden md:flex space-x-8 text-lg">
             <a wire:navigate href="/" class="relative cursor-pointer hover:text-[#b01e45] transition group">
@@ -49,10 +50,10 @@
                 ✕
             </button>
 
-            <a wire:navigate href="/" class="text-3xl font-bold text-[#b01e45] mb-6">
-                PromoCars BG
+            <a wire:navigate href="/" class="cursor-pointer">
+                <img src="{{ asset('images/brand/logo.png') }}" alt="PromoCars BG" class="h-12 md:h-16">
             </a>
-
+            
             <nav class="flex flex-col space-y-6 text-lg">
                 <a wire:navigate href="/" @click="open = false"
                     class="hover:text-[#b01e45] cursor-pointer transition">Начало</a>

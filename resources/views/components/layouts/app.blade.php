@@ -4,9 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <!--- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@1,300&display=swap"
+        rel="stylesheet">
+
+    <!--- Meta -->
     <title>{{ $metaTitle ?? 'PromoCars BG' }}</title>
-    <meta name="description" content="{{ $metaDescription ?? 'Открийте най-добрите оферти за автомобили в България.' }}">
+    <meta name="description"
+        content="{{ $metaDescription ?? 'Открийте най-добрите оферти за автомобили в България.' }}">
     <meta name="keywords" content="{{ $metaKeywords ?? 'автомобили, коли, продажба на коли, авто оферти' }}">
     <meta name="author" content="{{ $metaAuthor ?? 'PromoCars BG' }}">
 
@@ -19,7 +28,8 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ $metaTitle ?? 'PromoCars BG' }}">
-    <meta property="og:description" content="{{ $metaDescription ?? 'Открийте най-добрите оферти за автомобили в България.' }}">
+    <meta property="og:description"
+        content="{{ $metaDescription ?? 'Открийте най-добрите оферти за автомобили в България.' }}">
     <meta property="og:image" content="{{ asset('images/brand/logo.png') }}">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:site_name" content="PromoCars BG">
@@ -29,7 +39,7 @@
     @livewireStyles
 </head>
 
-<body class="flex flex-col min-h-screen antialiased bg-bgColor">
+<body class="flex flex-col h-auto antialiased bg-bgColor">
 
     <x-header />
 

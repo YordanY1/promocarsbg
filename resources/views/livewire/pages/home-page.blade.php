@@ -1,12 +1,11 @@
 <div>
 
     @livewire('components.cookie-consent')
-    
-    <div class="relative w-full min-h-[180vh] md:min-h-screen">
+
+    <div class="relative w-full h-auto">
         <img src="{{ asset('images/backgrounds/background.jpg') }}" class="absolute inset-0 w-full h-full object-cover">
 
-        <div
-            class="absolute inset-0 flex flex-col items-center justify-start pt-20 md:justify-center text-white bg-black/50 px-6 space-y-8 md:space-y-12">
+        <div class="relative flex flex-col items-center justify-start pt-20 md:justify-center text-white bg-black/50 px-6 space-y-8 md:space-y-12">
             <h1 class="text-3xl md:text-5xl font-bold text-[#b01e45] text-center animate-fade-in-up">
                 Добре дошли в PromoCars BG
             </h1>
@@ -14,13 +13,14 @@
                 Най-добрите оферти за автомобили на едно място!
             </p>
 
-            <div class="w-full max-w-sm md:max-w-2xl">
+            <div class="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl mx-auto">
                 @livewire('components.free-consultation')
             </div>
 
-            <div class="w-full max-w-md md:max-w-3xl">
+            <div class="w-full max-w-sm sm:max-w-md md:max-w-3xl lg:max-w-4xl mx-auto">
                 @livewire('components.promotions')
             </div>
+
         </div>
     </div>
 

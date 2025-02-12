@@ -14,6 +14,7 @@ use App\Livewire\Pages\PolicyPrivacy;
 use App\Http\Controllers\SitemapController;
 
 
+
 Route::get('/', HomePage::class)->name('home');
 Route::get('/cars', CarsPage::class)->name('cars');
 Route::get('/cars/{slug}', CarDetailsPage::class)->name('car.details');

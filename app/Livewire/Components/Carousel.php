@@ -9,11 +9,8 @@ class Carousel extends Component
 {
     public function render()
     {
-        $cars = Car::whereHas('images', function ($query) {
-                        $query->where('path', 'like', '%front%');
-                    })
-                    ->with(['images' => function ($query) {
-                        $query->where('path', 'like', '%front%');
+        $cars = Car::with(['images' => function ($query) {
+                        $query->oldest()->limit(1); 
                     }])
                     ->latest()
                     ->take(12)

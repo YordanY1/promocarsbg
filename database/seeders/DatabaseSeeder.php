@@ -14,12 +14,13 @@ class DatabaseSeeder extends Seeder
     {
 
         $this->call([
+            UserSeeder::class,
             CarMakeSeeder::class,
-            CarSeeder::class,     
-            ReviewSeeder::class,  
-            PromotionSeeder::class,
-            CarImageSeeder::class,
-            FAQSeeder::class,
+            // CarSeeder::class,     
+            // ReviewSeeder::class,
+            // PromotionSeeder::class,
+            // CarImageSeeder::class,
+            // FAQSeeder::class,
         ]);
     }
 }

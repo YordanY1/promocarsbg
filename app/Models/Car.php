@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Car extends Model {
     use HasFactory;
@@ -21,6 +23,11 @@ class Car extends Model {
 
     public function brand() {
         return $this->belongsTo(CarMake::class, 'make_id', 'id');
+    }
+    
+     public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('images')->useDisk('public');
     }
 
     public static function boot()
@@ -66,4 +73,10 @@ class Car extends Model {
             }
         }
     }
+
+    public function getFullNameAttribute()
+    {
+        return "{$this->brand->name} {$this->model}";
+    }
+
 }

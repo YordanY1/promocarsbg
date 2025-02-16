@@ -7,7 +7,7 @@
                 <p class="text-gray-300">Вашият надежден партньор за покупка на автомобили!</p>
 
                 <div class="space-y-2">
-                    <p>📞 <a href="tel:088 583 5973" class="group relative inline-block text-gray-300">
+                    <p>📞 <a href="tel:0885835973" class="group relative inline-block text-gray-300">
                             088 583 5973
                             <span
                                 class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#9a1b3d] transition-all duration-300 group-hover:w-full"></span>
@@ -18,7 +18,15 @@
                             <span
                                 class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#9a1b3d] transition-all duration-300 group-hover:w-full"></span>
                         </a></p>
+
+                    <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Plovdiv+Trud,+4199+Пловдив,+Bulgaria"
+                            target="_blank" class="group relative inline-block text-gray-300">
+                            Пловдив, с. Труд, 4199, България
+                            <span
+                                class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#9a1b3d] transition-all duration-300 group-hover:w-full"></span>
+                        </a></p>
                 </div>
+
                 <div class="flex space-x-4 mt-4">
                     <a href="https://www.facebook.com/profile.php?id=61573195191989" target="_blank"
                         class="group relative inline-block text-gray-300 hover:text-[#9a1b3d] text-2xl">

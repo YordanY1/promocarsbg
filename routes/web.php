@@ -12,6 +12,7 @@ use App\Livewire\Pages\CookiePolicy;
 use App\Livewire\Pages\PolicyPrivacy;
 
 use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\BotManController;
 
 
 
@@ -26,3 +27,6 @@ Route::get('/cookie-policy', CookiePolicy::class)->name('cookie-policy');
 Route::get('/policy-privacy', PolicyPrivacy::class)->name('policy-privacy');
 
 Route::get('/sitemap.xml', [SitemapController::class, 'index']);
+
+Route::match(['get', 'post'], '/botman', [BotManController::class, 'handle']);
+

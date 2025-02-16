@@ -1,7 +1,6 @@
 <div class="container mx-auto py-16 px-6">
     <div class="flex flex-col lg:flex-row bg-white shadow-lg rounded-lg overflow-hidden">
         <div class="lg:w-1/2 p-12 flex flex-col justify-center">
-
             <h2 class="text-4xl font-bold text-[#b01e45] mb-6">Свържете се с нас</h2>
             <p class="text-gray-600 mb-6 text-lg">Изпратете ни съобщение и нашите експерти ще се свържат с вас възможно най-скоро.</p>
 
@@ -46,7 +45,18 @@
                     Изпрати съобщение
                 </button>
             </form>
+        </div>
 
+        <div class="lg:w-1/2">
+            <iframe 
+                class="w-full h-full min-h-[500px]"
+                frameborder="0"
+                style="border:0"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/place/4199+%D0%A2%D1%80%D1%83%D0%B4/@42.2322658,24.7292779,15z/data=!3m1!4b1!4m6!3m5!1s0x14acd2bd99262ce5:0xa00a014cd0f3f40!8m2!3d42.2311334!4d24.7243554!16s%2Fg%2F1229qpbp?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoASAFQAw%3D%3D">
+            </iframe>
         </div>
     </div>
 </div>

@@ -7,27 +7,32 @@
                 <p class="text-gray-300">Вашият надежден партньор за покупка на автомобили!</p>
 
                 <div class="space-y-2">
-                    <p>📞 <a href="tel:+359888123456" class="group relative inline-block text-gray-300">
-                            +359 888 123 456
+                    <p>📞 <a href="tel:088 583 5973" class="group relative inline-block text-gray-300">
+                            088 583 5973
                             <span
                                 class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#9a1b3d] transition-all duration-300 group-hover:w-full"></span>
                         </a></p>
 
-                    <p>📧 <a href="mailto:contact@promocars.bg" class="group relative inline-block text-gray-300">
-                            contact@promocars.bg
+                    <p>📧 <a href="mailto:promocarsbg@gmail.com" class="group relative inline-block text-gray-300">
+                            promocarsbg@gmail.com
                             <span
                                 class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#9a1b3d] transition-all duration-300 group-hover:w-full"></span>
                         </a></p>
                 </div>
-
                 <div class="flex space-x-4 mt-4">
-                    <a href="#" class="group relative inline-block text-gray-300 hover:text-[#9a1b3d] text-2xl">
+                    <a href="https://www.facebook.com/profile.php?id=61573195191989" target="_blank"
+                        class="group relative inline-block text-gray-300 hover:text-[#9a1b3d] text-2xl">
                         <i class="fa-brands fa-facebook"></i>
                     </a>
-                    <a href="#" class="group relative inline-block text-gray-300 hover:text-[#9a1b3d] text-2xl">
+                    {{-- <a href="#" class="group relative inline-block text-gray-300 hover:text-[#9a1b3d] text-2xl">
                         <i class="fa-brands fa-instagram"></i>
+                    </a> --}}
+                    <a href="viber://chat?number=%2B359885835973"
+                        class="group relative inline-block text-gray-300 hover:text-[#9a1b3d] text-2xl">
+                        <i class="fa-brands fa-viber"></i>
                     </a>
                 </div>
+
             </div>
 
             <div>
@@ -71,7 +76,8 @@
         </div>
 
         <div class="border-t border-gray-600 mt-10 pt-4 text-center text-sm text-gray-400">
-            <p>© 2025 Всички права запазени</p>
+            <p>© {{ now()->year }} Всички права запазени</p>
+
             <div class="mt-2 space-x-4">
                 <a wire:navigate href="{{ route('policy-privacy') }}" class="group relative inline-block text-gray-300">
                     Политика за поверителност

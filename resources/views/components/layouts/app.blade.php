@@ -2,6 +2,14 @@
 <html lang="bg">
 
 <head>
+    <style>
+        .botman-chat-button {
+            position: fixed !important;
+            bottom: 20px !important;
+            right: 20px !important;
+            z-index: 99999 !important;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -40,7 +48,6 @@
 </head>
 
 <body class="flex flex-col h-auto antialiased bg-bgColor">
-
     <x-header />
 
     <main class="flex flex-1 flex-col">
@@ -50,6 +57,20 @@
     @livewire('components.footer')
 
     @livewireScripts
+
+    <script>
+        var botmanWidget = {
+            title: "Чат с нас",
+            mainColor: "#b01e45",
+            bubbleBackground: "#b01e45",
+            headerTextColor: "#ffffff",
+            aboutText: "PromoCars BG ChatBot",
+            introMessage: "👋 Здравейте! Как мога да помогна?",
+        };
+    </script>
+
+    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+
 </body>
 
 </html>

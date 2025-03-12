@@ -16,19 +16,20 @@
                     this.imageUrl = this.images[this.currentIndex];
                 }
             }" x-init="imageUrl = images.length > 0 ? images[0] : '{{ asset('images/placeholder-car.jpg') }}'"
-                @keydown.window="if(showModal) { 
-            if ($event.key === 'ArrowRight') nextImage(); 
-            if ($event.key === 'ArrowLeft') prevImage(); 
-            if ($event.key === 'Escape') showModal = false; 
+                @keydown.window="if(showModal) {
+            if ($event.key === 'ArrowRight') nextImage();
+            if ($event.key === 'ArrowLeft') prevImage();
+            if ($event.key === 'Escape') showModal = false;
         }"
                 class="relative flex flex-col items-center w-full">
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 w-full">
                     <template x-for="(image, index) in images" :key="index">
                         <img :src="image" alt="Car Image"
-                            class="block object-cover w-full h-64 sm:h-72 md:h-80 lg:h-96 rounded-lg cursor-pointer shadow-md hover:scale-105 transition-all duration-300"
-                            @click="showModal = true; currentIndex = index; imageUrl = images[currentIndex];"
-                            onerror="this.onerror=null;this.src='{{ asset('images/placeholder-car.jpg') }}';" />
+                        class="block object-cover w-full h-64 sm:h-72 md:h-80 lg:h-96 rounded-lg cursor-pointer shadow-md hover:scale-105 transition-all duration-300"
+                        @click="showModal = true; currentIndex = index; imageUrl = images[currentIndex];"
+                        onerror="this.onerror=null;this.src='{{ asset('storage/images/placeholder-car.jpg') }}';" />
+
                     </template>
                 </div>
 
@@ -43,7 +44,7 @@
 
                     <div class="relative flex items-center justify-center w-full max-w-5xl">
                         <button @click="prevImage()"
-                            class="absolute left-1 top-1/2 transform -translate-y-1/2 bg-white text-black 
+                            class="absolute left-1 top-1/2 transform -translate-y-1/2 bg-white text-black
                px-4 py-2 text-xl md:px-3 md:py-1 md:text-base sm:px-2 sm:py-1 sm:text-sm
                rounded-full shadow-md hover:bg-gray-300">
                             ‹
@@ -53,7 +54,7 @@
                             class="w-full max-w-4xl max-h-[90vh] object-contain rounded-lg shadow-lg transition-all duration-300">
 
                         <button @click="nextImage()"
-                            class="absolute right-1 top-1/2 transform -translate-y-1/2 bg-white text-black 
+                            class="absolute right-1 top-1/2 transform -translate-y-1/2 bg-white text-black
                px-4 py-2 text-xl md:px-3 md:py-1 md:text-base sm:px-2 sm:py-1 sm:text-sm
                rounded-full shadow-md hover:bg-gray-300">
                             ›
@@ -68,7 +69,7 @@
             <h1 class="text-4xl font-bold text-gray-900 text-center">{{ $car->brand->name }} {{ $car->model }}</h1>
             <div class="flex justify-center">
                 <div
-                    class="relative inline-block px-6 py-3 
+                    class="relative inline-block px-6 py-3
                 text-3xl sm:text-4xl md:text-5xl font-extrabold text-white rounded-lg shadow-lg
                 bg-gradient-to-r from-[#b01e45] to-[#9a1b3d] transform hover:scale-105 transition">
                     {{ number_format($car->price, 2) }} лв.

@@ -7,11 +7,10 @@
                 <p class="text-gray-300">Вашият надежден партньор за покупка на автомобили!</p>
 
                 <div class="space-y-2">
-                    <p>📞 <a href="tel:0885835973" class="group relative inline-block text-gray-300">
-                            088 583 5973
-                            <span
-                                class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#9a1b3d] transition-all duration-300 group-hover:w-full"></span>
-                        </a></p>
+                    <p>📞 <a href="tel:+359898487863" class="group relative inline-block text-gray-300">
+                        +359 898 487 863
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-[#9a1b3d] transition-all duration-300 group-hover:w-full"></span>
+                    </a></p>
 
                     <p>📧 <a href="mailto:promocarsbg@gmail.com" class="group relative inline-block text-gray-300">
                             promocarsbg@gmail.com

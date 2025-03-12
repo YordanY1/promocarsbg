@@ -96,7 +96,7 @@
                 <p class="flex items-center"><strong class="text-gray-900 mr-2">🚗 Привод:</strong> {{ $car->drive }}
                 </p>
                 <p class="flex items-center"><strong class="text-gray-900 mr-2">🏎️ Конски сили:</strong>
-                    {{ $car->horsepower }} hp</p>
+                    {{ $car->horsepower }} к.с</p>
                 {{-- <p class="flex items-center"><strong class="text-gray-900 mr-2">🔑 Ключове:</strong>
                     {{ $car->keys }}</p>
                 <p class="flex items-center"><strong class="text-gray-900 mr-2">📜 Собственост:</strong>

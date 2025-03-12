@@ -6,7 +6,7 @@
                 showModal: false,
                 imageUrl: '',
                 currentIndex: 0,
-                images: @js($car->images->pluck('path')->map(fn($path) => asset($path))->toArray() ?? []),
+                images: @js($car->images->pluck('path')->map(fn($path) => asset('storage/' . $path))->toArray() ?? []),
                 nextImage() {
                     this.currentIndex = (this.currentIndex + 1) % this.images.length;
                     this.imageUrl = this.images[this.currentIndex];

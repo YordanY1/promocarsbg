@@ -64,18 +64,18 @@ class CarResource extends Resource {
             ->label( 'Двигател' )
             ->required(),
 
-            TextInput::make( 'vin' )
-            ->label( 'VIN номер' )
-            ->unique( ignoreRecord: true )
-            ->required(),
+            // TextInput::make( 'vin' )
+            // ->label( 'VIN номер' )
+            // ->unique( ignoreRecord: true )
+            // ->required(),
 
             TextInput::make( 'exterior_color' )
             ->label( 'Външен цвят' )
             ->required(),
 
-            TextInput::make( 'interior_color' )
-            ->label( 'Вътрешен цвят' )
-            ->required(),
+            // TextInput::make( 'interior_color' )
+            // ->label( 'Вътрешен цвят' )
+            // ->required(),
 
             TextInput::make( 'drive' )
             ->label( 'Задвижване' )
@@ -86,13 +86,13 @@ class CarResource extends Resource {
             ->numeric()
             ->required(),
 
-            TextInput::make( 'keys' )
-            ->label( 'Брой ключове' )
-            ->required(),
+            // TextInput::make( 'keys' )
+            // ->label( 'Брой ключове' )
+            // ->required(),
 
-            TextInput::make( 'ownership' )
-            ->label( 'Брой собственици' )
-            ->required(),
+            // TextInput::make( 'ownership' )
+            // ->label( 'Брой собственици' )
+            // ->required(),
 
             FileUpload::make( 'image_upload' )
             ->label( 'Снимки' )
@@ -146,18 +146,18 @@ class CarResource extends Resource {
             ->label( 'Двигател' )
             ->sortable(),
 
-            TextColumn::make( 'vin' )
-            ->label( 'VIN' )
-            ->copyable()
-            ->sortable(),
+            // TextColumn::make( 'vin' )
+            // ->label( 'VIN' )
+            // ->copyable()
+            // ->sortable(),
 
             TextColumn::make( 'exterior_color' )
             ->label( 'Външен цвят' )
             ->sortable(),
 
-            TextColumn::make( 'interior_color' )
-            ->label( 'Вътрешен цвят' )
-            ->sortable(),
+            // TextColumn::make( 'interior_color' )
+            // ->label( 'Вътрешен цвят' )
+            // ->sortable(),
 
             TextColumn::make( 'drive' )
             ->label( 'Задвижване' )
@@ -168,13 +168,13 @@ class CarResource extends Resource {
             ->money( 'BGN' )
             ->sortable(),
 
-            TextColumn::make( 'keys' )
-            ->label( 'Ключове' )
-            ->sortable(),
+            // TextColumn::make( 'keys' )
+            // ->label( 'Ключове' )
+            // ->sortable(),
 
-            TextColumn::make( 'ownership' )
-            ->label( 'Брой собственици' )
-            ->sortable(),
+            // TextColumn::make( 'ownership' )
+            // ->label( 'Брой собственици' )
+            // ->sortable(),
         ] )
         ->actions( [
             EditAction::make(),

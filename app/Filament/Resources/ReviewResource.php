@@ -29,12 +29,12 @@ class ReviewResource extends Resource {
             Textarea::make( 'content' )
             ->label( 'Съдържание' )
             ->required(),
-            Select::make( 'car_id' )
-            ->label( 'Автомобил' )
-            ->getOptionLabelFromRecordUsing( fn ( $record ) => "{$record->brand->name} {$record->model}" )
-            ->relationship( 'car', 'model' )
-            ->preload()
-            ->required(),
+            // Select::make( 'car_id' )
+            // ->label( 'Автомобил' )
+            // ->getOptionLabelFromRecordUsing( fn ( $record ) => "{$record->brand->name} {$record->model}" )
+            // ->relationship( 'car', 'model' )
+            // ->preload()
+            // ->required(),
 
         ] );
     }
@@ -50,10 +50,10 @@ class ReviewResource extends Resource {
             ->label( 'Съдържание' )
             ->wrap()
             ->limit( 100 ),
-            TextColumn::make( 'car.title' )
-            ->label( 'Автомобил' )
-            ->sortable()
-            ->searchable(),
+            // TextColumn::make( 'car.title' )
+            // ->label( 'Автомобил' )
+            // ->sortable()
+            // ->searchable(),
         ] )
         ->actions( [
             EditAction::make(),

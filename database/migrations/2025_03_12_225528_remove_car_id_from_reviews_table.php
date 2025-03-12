@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::table('reviews', function (Blueprint $table) {
 
-            $table->dropForeign(['car_id']);
-
             $table->dropColumn('car_id');
         });
     }

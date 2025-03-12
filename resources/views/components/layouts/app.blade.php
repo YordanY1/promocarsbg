@@ -3,12 +3,30 @@
 
 <head>
     <style>
-        .botman-chat-button {
+       .mobile-closed-message-avatar,
+        .desktop-closed-message-avatar {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
             position: fixed !important;
             bottom: 20px !important;
             right: 20px !important;
-            z-index: 99999 !important;
+            width: 60px !important;
+            height: 60px !important;
+            border-radius: 50% !important;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2) !important;
+            background-color: #b01e45 !important;
+            top: unset !important;
         }
+
+        .mobile-closed-message-avatar svg,
+        .desktop-closed-message-avatar svg {
+            width: 60% !important;
+            height: auto !important;
+            padding: 0 !important;
+            fill: #FFFFFF !important;
+        }
+
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

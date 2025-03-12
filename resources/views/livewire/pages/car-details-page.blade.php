@@ -26,9 +26,9 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 w-full">
                     <template x-for="(image, index) in images" :key="index">
                         <img :src="image" alt="Car Image"
-                        class="block object-cover w-full h-64 sm:h-72 md:h-80 lg:h-96 rounded-lg cursor-pointer shadow-md hover:scale-105 transition-all duration-300"
-                        @click="showModal = true; currentIndex = index; imageUrl = images[currentIndex];"
-                        onerror="this.onerror=null;this.src='{{ asset('storage/images/placeholder-car.jpg') }}';" />
+                            class="block object-cover w-full h-64 sm:h-72 md:h-80 lg:h-96 rounded-lg cursor-pointer shadow-md hover:scale-105 transition-all duration-300"
+                            @click="showModal = true; currentIndex = index; imageUrl = images[currentIndex];"
+                            onerror="this.onerror=null;this.src='{{ asset('storage/images/placeholder-car.jpg') }}';" />
 
                     </template>
                 </div>
@@ -95,10 +95,12 @@
                     {{ $car->exterior_color }}</p>
                 <p class="flex items-center"><strong class="text-gray-900 mr-2">🚗 Привод:</strong> {{ $car->drive }}
                 </p>
-                <p class="flex items-center"><strong class="text-gray-900 mr-2">🔑 Ключове:</strong>
+                <p class="flex items-center"><strong class="text-gray-900 mr-2">🏎️ Конски сили:</strong>
+                    {{ $car->horsepower }} hp</p>
+                {{-- <p class="flex items-center"><strong class="text-gray-900 mr-2">🔑 Ключове:</strong>
                     {{ $car->keys }}</p>
                 <p class="flex items-center"><strong class="text-gray-900 mr-2">📜 Собственост:</strong>
-                    {{ $car->ownership }}</p>
+                    {{ $car->ownership }}</p> --}}
             </div>
 
             <hr class="border-gray-300">

@@ -25,7 +25,7 @@
                     <div class="w-full md:w-1/3 bg-white rounded-lg shadow-md flex flex-col items-center">
 
 
-                        <img src="{{ asset($car->images->first()->path) }}" alt="{{ $car->make }}"
+                       <img src="{{ asset('storage/' . $car->images->first()->path) }}" alt="{{ $car->make }}"
                             class="w-full h-72 md:h-48 object-cover rounded-t-lg">
 
 
@@ -52,7 +52,7 @@
                 @foreach ($chunk as $car)
                     <div class="w-full bg-white rounded-lg shadow-md flex flex-col items-center mb-6">
 
-                        <img src="{{ asset($car->images->first()->path) }}" alt="{{ $car->make }}"
+                       <img src="{{ asset('storage/' . $car->images->first()->path) }}" alt="{{ $car->make }}"
                             class="w-full h-72 object-cover rounded-t-lg">
 
 

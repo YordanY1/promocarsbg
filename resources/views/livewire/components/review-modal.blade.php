@@ -16,8 +16,8 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
 
                         @if ($review && $review->car)
-                            <img src="{{ asset($review->car->images->first()->path) }}" alt="{{ $review->car->make }}"
-                                class="w-full h-auto rounded-lg shadow-lg">
+                            <img src="{{ asset('storage/' . $review->car->images->first()->path) }}" alt="{{ $review->car->make }}" class="w-full h-auto rounded-lg shadow-lg">
+
                         @endif
 
                         <div>
@@ -27,7 +27,7 @@
 
                             <div class="mt-6 text-center">
                                 <button wire:click="closeModal"
-                                    class="bg-[#b01e45] text-white px-6 py-3 rounded-lg text-lg w-full md:w-auto 
+                                    class="bg-[#b01e45] text-white px-6 py-3 rounded-lg text-lg w-full md:w-auto
                                     hover:bg-[#9a1b3d] transition">
                                     Затвори
                                 </button>

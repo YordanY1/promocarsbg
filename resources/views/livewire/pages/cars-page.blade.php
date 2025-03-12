@@ -17,8 +17,8 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($cars as $car)
                     <div class="bg-white rounded-lg shadow-md p-4">
-                        <img src="{{ optional($car->images->first())->path ? asset($car->images->first()->path) : asset('images/placeholder-car.jpg') }}"
-                            alt="{{ $car->brand->name }}" class="w-full h-48 object-cover rounded-lg">
+                        <img src="{{ optional($car->images->first())->path ? asset('storage/' . $car->images->first()->path) : asset('images/placeholder-car.jpg') }}"
+                         alt="{{ $car->brand->name }}" class="w-full h-48 object-cover rounded-lg">
 
                         <div class="mt-4">
                             <div class="mt-4 space-y-2">

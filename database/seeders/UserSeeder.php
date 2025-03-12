@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Promo CarsBG',
             'email' => 'promocarsbg@gmail.com',
-            'password' => 'PromoCarsBG',
+            'password' => 'promocars123',
             'email_verified_at' => Carbon::now(),
             'is_admin' => true,
         ]);

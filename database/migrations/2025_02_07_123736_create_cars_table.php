@@ -22,13 +22,13 @@ return new class extends Migration
             $table->integer('mileage');
             $table->string('transmission');
             $table->string('engine'); 
-            $table->string('vin')->unique();
+            // $table->string('vin')->unique();
             $table->string('exterior_color');
-            $table->string('interior_color'); 
+            // $table->string('interior_color'); 
             $table->string('drive');
             $table->integer('price');
-            $table->string('keys');
-            $table->string('ownership'); 
+            // $table->string('keys');
+            // $table->string('ownership'); 
             $table->timestamps();
 
             $table->foreign('make_id')->references('id')->on('car_makes')->onDelete('cascade');

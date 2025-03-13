@@ -22,21 +22,22 @@
         @foreach ($cars->chunk(3) as $chunk)
             <div class="flex w-full flex-shrink-0 space-x-4">
                 @foreach ($chunk as $car)
-                    <div class="w-full md:w-1/3 bg-white rounded-lg shadow-md flex flex-col items-center">
+                    <div class="w-full md:w-1/3 bg-white rounded-lg shadow-md flex flex-col items-center h-full">
 
-
-                       <img src="{{ asset('storage/' . $car->images->first()->path) }}" alt="{{ $car->make }}"
+                        <img src="{{ asset('storage/' . $car->images->first()->path) }}" alt="{{ $car->make }}"
                             class="w-full h-72 md:h-48 object-cover rounded-t-lg">
 
-
-                        <div class="p-4 text-center">
+                        <div class="p-4 flex flex-col flex-grow text-center">
                             <h3 class="text-lg font-bold text-gray-800">{{ $car->brand->name }} {{ $car->model }}</h3>
                             <p class="text-lg text-[#b01e45] font-semibold mb-4">{{ number_format($car->price, 2) }} лв.
                             </p>
-                            <a wire:navigate href="{{ route('car.details', ['slug' => $car->slug]) }}"
-                                class="bg-[#b01e45] text-white px-6 py-2 rounded-lg text-sm hover:bg-[#9a1b3d] transition">
-                                Разгледай
-                            </a>
+
+                            <div class="mt-auto flex justify-end w-full">
+                                <a wire:navigate href="{{ route('car.details', ['slug' => $car->slug]) }}"
+                                    class="bg-[#b01e45] text-white px-6 py-2 rounded-lg text-sm hover:bg-[#9a1b3d] transition">
+                                    Разгледай
+                                </a>
+                            </div>
                         </div>
 
                     </div>
@@ -52,7 +53,7 @@
                 @foreach ($chunk as $car)
                     <div class="w-full bg-white rounded-lg shadow-md flex flex-col items-center mb-6">
 
-                       <img src="{{ asset('storage/' . $car->images->first()->path) }}" alt="{{ $car->make }}"
+                        <img src="{{ asset('storage/' . $car->images->first()->path) }}" alt="{{ $car->make }}"
                             class="w-full h-72 object-cover rounded-t-lg">
 
 

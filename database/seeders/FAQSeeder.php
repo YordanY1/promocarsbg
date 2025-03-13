@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\FAQ;
+use App\Models\Faq;
 
 class FAQSeeder extends Seeder
 {

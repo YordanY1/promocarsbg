@@ -3,7 +3,7 @@
 namespace App\Livewire\Pages;
 
 use Livewire\Component;
-use App\Models\FAQ;
+use App\Models\Faq;
 
 class FaqPage extends Component
 {

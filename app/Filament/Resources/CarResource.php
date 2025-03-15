@@ -33,30 +33,30 @@ class CarResource extends Resource
                 ->required(),
 
             TextInput::make('model')
-                ->label('Модел')
-                ->required(),
+                ->label('Модел'),
+                // ->required(),
 
             TextInput::make('category')
-                ->label('Категория')
-                ->required(),
+                ->label('Категория'),
+                // ->required(),
 
             TextInput::make('year')
                 ->label('Година')
-                ->numeric()
-                ->required(),
+                ->numeric(),
+                // ->required(),
 
             TextInput::make('slug')
                 ->label('Slug')
                 ->disabled(),
 
             Textarea::make('description')
-                ->label('Описание')
-                ->required(),
+                ->label('Описание'),
+                // ->required(),
 
             TextInput::make('mileage')
                 ->label('Пробег (км)')
-                ->numeric()
-                ->required(),
+                ->numeric(),
+                // ->required(),
 
             TextInput::make('horsepower')
                 ->label('Конски сили')
@@ -65,12 +65,12 @@ class CarResource extends Resource
 
 
             TextInput::make('transmission')
-                ->label('Скоростна кутия')
-                ->required(),
+                ->label('Скоростна кутия'),
+                // ->required(),
 
             TextInput::make('engine')
-                ->label('Двигател')
-                ->required(),
+                ->label('Двигател'),
+                // ->required(),
 
             // TextInput::make( 'vin' )
             // ->label( 'VIN номер' )
@@ -78,21 +78,21 @@ class CarResource extends Resource
             // ->required(),
 
             TextInput::make('exterior_color')
-                ->label('Външен цвят')
-                ->required(),
+                ->label('Външен цвят'),
+                // ->required(),
 
             // TextInput::make( 'interior_color' )
             // ->label( 'Вътрешен цвят' )
             // ->required(),
 
             TextInput::make('drive')
-                ->label('Задвижване')
-                ->required(),
+                ->label('Задвижване'),
+                // ->required(),
 
             TextInput::make('price')
                 ->label('Цена')
-                ->numeric()
-                ->required(),
+                ->numeric(),
+                // ->required(),
 
             // TextInput::make( 'keys' )
             // ->label( 'Брой ключове' )

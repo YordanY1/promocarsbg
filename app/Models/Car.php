@@ -8,24 +8,28 @@ use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Car extends Model {
+class Car extends Model
+{
     use HasFactory;
 
     protected $guarded = ['id'];
 
-    public function reviews() {
+    public function reviews()
+    {
         return $this->hasMany(Review::class);
     }
 
-    public function images() {
+    public function images()
+    {
         return $this->hasMany(CarImage::class);
     }
 
-    public function brand() {
+    public function brand()
+    {
         return $this->belongsTo(CarMake::class, 'make_id', 'id');
     }
-    
-     public function registerMediaCollections(): void
+
+    public function registerMediaCollections(): void
     {
         $this->addMediaCollection('images')->useDisk('public');
     }
@@ -56,11 +60,11 @@ class Car extends Model {
         if ($this->brand) {
             $baseSlug = Str::slug("{$this->brand->name}-{$this->model}");
 
-           
+
             $existingSlugs = Car::where('slug', 'LIKE', "$baseSlug%")
-                                ->where('id', '!=', $this->id)
-                                ->pluck('slug')
-                                ->toArray();
+                ->where('id', '!=', $this->id)
+                ->pluck('slug')
+                ->toArray();
 
             if (in_array($baseSlug, $existingSlugs)) {
                 $suffix = 1;
@@ -78,5 +82,4 @@ class Car extends Model {
     {
         return "{$this->brand->name} {$this->model}";
     }
-
 }

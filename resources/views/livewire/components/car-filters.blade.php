@@ -48,6 +48,7 @@
                         <span class="text-sm font-semibold mt-2">{{ $brand->name }}</span>
                     </button>
                 @endforeach
+
             </div>
         </div>
     </div>

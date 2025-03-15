@@ -16,37 +16,40 @@
         <div class="lg:col-span-3">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($cars as $car)
-                <div class="bg-white rounded-lg shadow-md p-4 flex flex-col h-full">
-                    <img src="{{ optional($car->images->first())->path ? asset('storage/' . $car->images->first()->path) : asset('images/placeholder-car.jpg') }}"
-                        alt="{{ $car->brand->name }}" class="w-full h-48 object-cover rounded-lg">
+                    <div class="bg-white rounded-lg shadow-md p-4 flex flex-col h-full">
+                        <img src="{{ optional($car->images->first())->path ? asset('storage/' . $car->images->first()->path) : asset('images/placeholder-car.jpg') }}"
+                            alt="{{ $car->brand->name }}" class="w-full h-48 object-cover rounded-lg">
 
-                    <div class="mt-4 flex flex-col flex-grow">
-                        <div class="space-y-2 flex-grow">
-                            <h3 class="text-lg font-bold text-gray-800 break-words">
-                                {{ $car->brand->name }} {{ $car->model }}
-                            </h3>
-                            <p class="text-gray-600">
-                                {{ $car->year }} | {{ $car->engine }}
-                            </p>
-                            <p class="text-gray-600">
-                                Пробег: {{ number_format($car->mileage, '', '', ' ') }} км.
-                            </p>
-                            <p class="text-gray-600">
-                                Трансмисия: {{ $car->transmission }}
-                            </p>
-                            <p class="text-lg font-semibold text-[#b01e45]">
-                                {{ number_format($car->price, 2) }} лв.
-                            </p>
-                        </div>
+                        <div class="mt-4 flex flex-col flex-grow">
+                            <div class="space-y-2 flex-grow">
+                                <h3 class="text-lg font-bold text-gray-800 break-words">
+                                    {{ $car->brand->name }} {{ $car->model }}
+                                </h3>
+                                <p class="text-gray-600">
+                                    {{ $car->year }} | {{ $car->engine }}
+                                </p>
+                                @if ($car->mileage)
+                                    <p class="text-gray-600">
+                                        Пробег: {{ number_format($car->mileage, 0, '', ' ') }} км.
+                                    </p>
+                                @endif
 
-                        <div class="flex justify-end mt-auto">
-                            <a wire:navigate href="{{ route('car.details', ['slug' => $car->slug]) }}"
-                                class="bg-[#b01e45] text-white px-6 py-2 rounded-lg text-sm hover:bg-[#9a1b3d] transition">
-                                Разгледай
-                            </a>
+                                <p class="text-gray-600">
+                                    Трансмисия: {{ $car->transmission }}
+                                </p>
+                                <p class="text-lg font-semibold text-[#b01e45]">
+                                    {{ number_format($car->price, 2) }} лв.
+                                </p>
+                            </div>
+
+                            <div class="flex justify-end mt-auto">
+                                <a wire:navigate href="{{ route('car.details', ['slug' => $car->slug]) }}"
+                                    class="bg-[#b01e45] text-white px-6 py-2 rounded-lg text-sm hover:bg-[#9a1b3d] transition">
+                                    Разгледай
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
                 @empty
                     <div class="col-span-full text-center text-gray-600">

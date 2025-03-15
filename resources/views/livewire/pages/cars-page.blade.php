@@ -29,7 +29,7 @@
                                 {{ $car->year }} | {{ $car->engine }}
                             </p>
                             <p class="text-gray-600">
-                                Пробег: {{ number_format($car->mileage, 0, '', ' ') }} км.
+                                Пробег: {{ number_format($car->mileage, '', '', ' ') }} км.
                             </p>
                             <p class="text-gray-600">
                                 Трансмисия: {{ $car->transmission }}

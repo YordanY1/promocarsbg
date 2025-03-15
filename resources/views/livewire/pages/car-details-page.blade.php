@@ -86,7 +86,7 @@
                 <p class="flex items-center"><strong class="text-gray-900 mr-2">📅 Година:</strong> {{ $car->year }}
                 </p>
                 <p class="flex items-center"><strong class="text-gray-900 mr-2">📍 Пробег:</strong>
-                    {{ number_format($car->mileage, 0, '', ' ') }} км</p>
+                    {{ number_format($car->mileage, '', '', ' ') }} км</p>
                 <p class="flex items-center"><strong class="text-gray-900 mr-2">🔧 Трансмисия:</strong>
                     {{ $car->transmission }}</p>
                 <p class="flex items-center"><strong class="text-gray-900 mr-2">⛽ Двигател:</strong> {{ $car->engine }}

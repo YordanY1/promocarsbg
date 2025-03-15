@@ -83,25 +83,48 @@
             <p class="text-gray-600 text-2xl font-semibold text-center">{{ $car->category }}</p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700">
-                <p class="flex items-center"><strong class="text-gray-900 mr-2">📅 Година:</strong> {{ $car->year }}
-                </p>
+                @if ($car->year)
+                    <p class="flex items-center">
+                        <strong class="text-gray-900 mr-2">📅 Година:</strong> {{ $car->year }}
+                    </p>
+                @endif
+
                 @if ($car->mileage)
                     <p class="flex items-center">
                         <strong class="text-gray-900 mr-2">📍 Пробег:</strong>
                         {{ number_format($car->mileage, 0, '', ' ') }} км.
                     </p>
                 @endif
+                @if ($car->transmission)
+                    <p class="flex items-center">
+                        <strong class="text-gray-900 mr-2">🔧 Трансмисия:</strong> {{ $car->transmission }}
+                    </p>
+                @endif
 
-                <p class="flex items-center"><strong class="text-gray-900 mr-2">🔧 Трансмисия:</strong>
-                    {{ $car->transmission }}</p>
-                <p class="flex items-center"><strong class="text-gray-900 mr-2">⛽ Двигател:</strong> {{ $car->engine }}
-                </p>
-                <p class="flex items-center"><strong class="text-gray-900 mr-2">🎨 Цвят:</strong>
-                    {{ $car->exterior_color }}</p>
-                <p class="flex items-center"><strong class="text-gray-900 mr-2">🚗 Привод:</strong> {{ $car->drive }}
-                </p>
-                <p class="flex items-center"><strong class="text-gray-900 mr-2">🏎️ Конски сили:</strong>
-                    {{ $car->horsepower }} к.с</p>
+                @if ($car->engine)
+                    <p class="flex items-center">
+                        <strong class="text-gray-900 mr-2">⛽ Двигател:</strong> {{ $car->engine }}
+                    </p>
+                @endif
+
+                @if ($car->exterior_color)
+                    <p class="flex items-center">
+                        <strong class="text-gray-900 mr-2">🎨 Цвят:</strong> {{ $car->exterior_color }}
+                    </p>
+                @endif
+
+                @if ($car->drive)
+                    <p class="flex items-center">
+                        <strong class="text-gray-900 mr-2">🚗 Привод:</strong> {{ $car->drive }}
+                    </p>
+                @endif
+
+                @if ($car->horsepower)
+                    <p class="flex items-center">
+                        <strong class="text-gray-900 mr-2">🏎️ Конски сили:</strong> {{ $car->horsepower }} к.с.
+                    </p>
+                @endif
+
                 {{-- <p class="flex items-center"><strong class="text-gray-900 mr-2">🔑 Ключове:</strong>
                     {{ $car->keys }}</p>
                 <p class="flex items-center"><strong class="text-gray-900 mr-2">📜 Собственост:</strong>
